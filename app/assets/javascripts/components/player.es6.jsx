@@ -86,13 +86,16 @@ class AudioPlayer extends React.Component {
       )
     );
 
-    let playButtonLabel = this.state.playing ? "🔇" : "▶"; // mute, play
+    let playButtonLabel = this.state.playing ? "▶" : "▶"; // mute, play
     let playButton = React.DOM.div({
       className: "play-button-" + this.state.playing,
       onClick: this.handlePlayButtonClick.bind(this),
       title: this.state.playing ? "Click to mute" : "Click to play"
     },
-      React.DOM.p(null, playButtonLabel)
+      React.DOM.div(null,
+        React.DOM.p({ className: "vinyl" }, ""),
+        React.DOM.p({ className: "play-icon"}, playButtonLabel)
+      )
     );
 
     return (
