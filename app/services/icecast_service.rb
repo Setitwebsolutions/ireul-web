@@ -45,5 +45,10 @@ class IcecastService
     mount = mounts.select { |m| m.css('.streamheader h3').text == "Mount Point #{@mountpoint_selector}" }[0]
     listeners = mount.css('.newscontent > table > tr:nth-child(5) > td:nth-child(2)').text
     { time: Time.now.utc, listeners: listeners.to_i }
+  rescue Exception => e
+    Rails.logger.error "[service.icecast] Exception occurred while parsing Icecast info page."
+    Rails.logger e
+    Rails.logger.error e.backtrace
+    { time: Time.now.utc, listeners: listeners.to_i }
   end
 end
