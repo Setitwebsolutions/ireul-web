@@ -33,9 +33,7 @@ class IreulService
     @ireul = Ireul::Core.new(@socket)
     start_queue_watcher
   rescue Errno::ECONNREFUSED => e
-    Rails.logger.warn "[service.ireul] Failed to connect to Ireul: starting reconnect...\n#{e.inspect}"
-    reconnect
-    raise IreulConnError
+    handle_conn_error(e)
   end
 
   def reconnect
@@ -48,7 +46,8 @@ class IreulService
             @ireul = Ireul::Core.new(@socket)
             start_queue_watcher
             throw :connected
-          rescue
+          rescue Exception => e
+            Rails.logger.warn "[service.ireul] Failed to reconnect to Ireul: #{e}, sleeping #{RETRY_DELAY}..."
             sleep RETRY_DELAY
             retry
           end
@@ -111,7 +110,6 @@ class IreulService
     Rails.logger.warn "[service.ireul] Failed to connect to Ireul: reconnecting... #{e.inspect}"
     Rails.logger.warn "[service.ireul] #{e.backtrace}"
     reconnect
-    raise IreulConnError
   end
 
   def method_missing(method, args = nil)
