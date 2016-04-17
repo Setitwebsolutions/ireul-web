@@ -2,32 +2,32 @@ development:
   environment: development
   username: devuser
   password: devpass
-  url: 127.0.0.1
+  url: localhost
   port: 3001
   request_time_gap_min: 1
-  stream_link: 127.0.0.1/icecast.ogg
+  stream_link: localhost/icecast.ogg
   icecast:
-    web_addr: http://127.0.0.1:8000
+    web_addr: http://localhost:8000
     selector: /mountpoint
 test:
   environment: test
   username: testuser
   password: testpass
-  url: 127.0.0.1
+  url: localhost
   port: 3001
   request_time_gap_min: 0.05
-  stream_link: 127.0.0.1/icecast.ogg
+  stream_link: localhost/icecast.ogg
   icecast:
-    web_addr: http://127.0.0.1:8000
+    web_addr: http://localhost:8000
     selector: /mountpoint
 production:
   environment: production
   username: produser
   password: prodpass
-  url: 127.0.0.1
+  url: localhost
   port: 3001
   request_time_gap_min: 60
-  stream_link: 127.0.0.1/icecast.ogg
+  stream_link: localhost/icecast.ogg
   icecast:
-    web_addr: http://127.0.0.1:8000
+    web_addr: http://localhost:8000
     selector: /mountpoint
