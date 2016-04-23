@@ -27,8 +27,8 @@ Rails (with React) client for [Ireul](https://github.com/infinityb/ireul/), a ra
 ## Notes and useful commands
 * Login at `http://example.com/login`
 * `rake db:fixtures:dump` dumps existing DB as fixtures
-* `rails runner script/ingest.rb` to import songs
-* `Gemfile.lock` is in `.gitignore` due to cross-platform issues [1](https://github.com/bundler/bundler-features/issues/4). Also helps with running on Travis CI as local gems are used in this app.
+* `Gemfile.lock` is in `.gitignore` due to cross-platform issues [1](https://github.com/bundler/bundler-features/issues/4).
+* [Importing songs](DEPLOYING.md#importing-songs)
 
 ### Windows
 * Ruby22 + bcrypt — [1](https://github.com/codahale/bcrypt-ruby/issues/116), [2](https://www.alib.jp/entries/bcrypt_ext_load_error_on_ruby21x), make sure `git`, DevKit `dk/bin`, `dk/mingw/bin` are in PATH

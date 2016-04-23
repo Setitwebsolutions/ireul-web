@@ -34,3 +34,49 @@
 1. `cap production deploy`
 2. Whatever needs running (assets, migrations)
 3. `cap production passenger:restart` or `cap production passenger:stop_sudo`, `cap production passenger:start_sudo`
+
+# Importing songs
+
+## Convert
+
+Only 48kHz OGG songs are supported.
+
+	oggenc $FILEPATH --min-bitrate 80 --max-bitrate 140 --bitrate 128 --resample 48000
+
+## Ingest
+
+There is a Rails script to add songs, with attached images, into the database. The ingested songs are stored in Paperclip's upload directory `public/system`.
+
+```xml
+rails runner script/ingest.rb <root_path> <song_glob_pattern> <in_dir_image_glob_pattern>
+```
+
+### Examples
+
+```
+# Directory structure:
+  sourcedir/
+    - song1.ogg
+    - song2.ogg
+    - image.jpg
+
+$ RAILS_ENV=<env> rails runner script/ingest.rb sourcedir "*.ogg" "*.{gif,png,jpg,jpeg,bmp}"
+```
+
+```
+# Directory structure:
+  sourcedir/
+    artist1/
+      album/
+        - song1.ogg
+    artist2/
+      album/
+        - song1.ogg
+        - song2.ogg
+        - image.jpg
+      album2/
+        - song1.ogg
+        - cover.png
+
+$ RAILS_ENV=<env> rails runner script/ingest.rb sourcedir "*/*.ogg" "*.{gif,png,jpg,jpeg,bmp}"
+```

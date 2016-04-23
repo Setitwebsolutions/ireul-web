@@ -5,12 +5,14 @@ def ingest_dir(song_glob_pattern, image_glob_pattern)
   Dir.glob(song_glob_pattern, File::FNM_CASEFOLD).select do |song_path|
     begin
       image_path = nil
-      Dir.chdir(File.dirname(song_path)) do |_d|
+      dir = File.dirname(song_path)
+
+      Dir.chdir(dir) do |_d|
         image_path = Dir.glob(image_glob_pattern, File::FNM_CASEFOLD).first
       end
 
       puts "Ingesting song: #{song_path}, image: #{image_path}"
-      ingest_song(song_path, image_path)
+      ingest_song(song_path, File.join(dir, image_path))
       processed_count += 1
     rescue StandardError => e
       puts e.inspect
@@ -42,7 +44,7 @@ image_glob_pattern = ARGV[2] || '*.{gif,png,jpg,jpeg,bmp}'
 if ARGV[0].nil?
   puts "Usage: rails runner ingest.rb <root_path> [song_glob_pattern=#{song_glob_pattern}] " +
        "[in_song_directory_image_glob_pattern=#{image_glob_pattern}]"
-  puts 'rails runner <root_dir> "*/*/*.ogg" "*.{gif,png,jpg,jpeg,bmp}" for artist/album/*.ogg'
+  puts 'rails runner ingest.rb <root_dir> "*/*/*.ogg" "*.{gif,png,jpg,jpeg,bmp}" for artist/album/*.ogg'
   exit
 end
 
