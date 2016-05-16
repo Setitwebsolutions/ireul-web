@@ -41,7 +41,13 @@
 
 Only 48kHz OGG songs are supported.
 
-	oggenc $FILEPATH --min-bitrate 80 --max-bitrate 140 --bitrate 128 --resample 48000
+Single file:
+
+    oggenc $FILEPATH --min-bitrate 80 --max-bitrate 140 --bitrate 128 --resample 48000
+
+Directory:
+
+    find *.flac -exec oggenc {} --min-bitrate 80 --max-bitrate 140 --bitrate 128 --resample 48000 \;
 
 ## Ingest
 
