@@ -52,6 +52,10 @@ div[data-react-class="Radio"] {
 .song-searcher {
   display: flex;
   flex-direction: column;
+
+  .song-searcher-results {
+    margin-top: 1rem;
+  }
 }
 
 .tabs {

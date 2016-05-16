@@ -117,8 +117,10 @@ class SongSearcher extends React.Component {
           placeholder="Type here to start searching…"
           onChange={this.onChangeFn}
         />
-        {resultsEl}
-        {hasMoreButton}
+        <div className="song-searcher-results">
+          {resultsEl}
+          {hasMoreButton}
+        </div>
       </div>
     );
   }
