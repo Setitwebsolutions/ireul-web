@@ -9,6 +9,7 @@ class SongSearcher extends React.Component {
     };
 
     this.onChangeFn = this.onChange.bind(this);
+    this.searchDebounced = _.debounce(this.search, 1000, { leading: true });
   }
 
   shouldComponentUpdate() {
@@ -21,7 +22,7 @@ class SongSearcher extends React.Component {
       page: 1,
       query: event.currentTarget.value
     });
-    this.search(event.currentTarget.value);
+    this.searchDebounced(event.currentTarget.value);
   }
 
   searchMore() {
