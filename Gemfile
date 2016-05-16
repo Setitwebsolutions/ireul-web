@@ -56,7 +56,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Windows compatability requirement
 gem 'nokogiri', '>= 1.6.7'
 
-gem 'react-rails', '~> 1.6.0'
+gem 'react-rails', '~> 1.7.1'
 gem 'paperclip', '~> 4.3'
 gem 'kaminari'
 

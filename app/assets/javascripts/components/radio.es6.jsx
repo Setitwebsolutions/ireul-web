@@ -98,8 +98,10 @@ class Radio extends React.Component {
       document.title = `${song.title} — ${song.artist}`;
     } else if (song.title || song.artist) {
       document.title = song.title || song.artist;
-    } else {
+    } else if (song) {
       document.title = '♫♪♫';
+    } else {
+      document.title = 'ireul-web';
     }
   }
 

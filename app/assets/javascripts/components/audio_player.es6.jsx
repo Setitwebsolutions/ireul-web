@@ -60,7 +60,7 @@ class AudioPlayer extends React.Component {
       return `👤 ${props.streamInfo.icecast.listeners}`;
     }
 
-    return '';
+    return '👤 ?';
   }
 
   render() {
@@ -87,7 +87,7 @@ class AudioPlayer extends React.Component {
           <CopyLink href={this.props.source} text="🔗" />
 
           <div className="listener-count" title="Current listeners">
-            {`👤 ${this.props.streamInfo.icecast.listeners || '0'}`}
+            {this.listenerCount(this.props)}
           </div>
 
           <NiceButton niceness={this.props.streamInfo.niceness} />
