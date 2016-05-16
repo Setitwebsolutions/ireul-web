@@ -67,8 +67,9 @@ div[data-react-class="Radio"] {
   }
 
   li {
-    flex: 1;
     @include clickable;
+
+    flex: 1;
 
     &:hover {
       background-color: $button-highlight-color;
@@ -196,8 +197,8 @@ div[data-react-class="Radio"] {
 
   .progress {
     background-color: $color-card-background-lighter;
-    border: none;
-    height: 0.3rem;
+    border: 0;
+    height: .3rem;
     width: $magic-width;
 
     .value {
@@ -230,7 +231,7 @@ div[data-react-class="Radio"] {
 
       .fill {
         background-color: $color-card-background-lighter;
-        height: 0.2rem;
+        height: .2rem;
         width: 100%;
       }
 
@@ -252,14 +253,14 @@ div[data-react-class="Radio"] {
   .controls {
     display: flex;
     flex-direction: column;
-    margin: 1.6rem 0 0.3rem;
+    margin: 1.6rem 0 .3rem;
     width: $magic-width;
 
     .play-button-false,
     .play-button-true {
       height: 6.4rem;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(.680, -.550, .265, 1.55);
+      transition: all .4s cubic-bezier(.680, -.550, .265, 1.55);
       transition-property: margin-right, opacity;
       width: 100%;
 
@@ -281,7 +282,7 @@ div[data-react-class="Radio"] {
         }
       }
 
-      &:after {
+      &::after {
         content: '🔇';
         font-size: 1.8rem;
         left: calc(100% - 1.8rem);
@@ -297,7 +298,7 @@ div[data-react-class="Radio"] {
         margin-top: 0;
       }
 
-      &:after {
+      &::after {
         opacity: 0;
         transition: opacity 0.2s;
       }
@@ -305,7 +306,7 @@ div[data-react-class="Radio"] {
 
     .play-button-true {
       p {
-        margin-top: 8rem
+        margin-top: 8rem;
       }
 
       &:hover {
@@ -313,13 +314,13 @@ div[data-react-class="Radio"] {
           margin-top: 0;
         }
 
-        &:after{
+        &::after {
           opacity: 0;
           transition: opacity 0.2s;
         }
       }
 
-      &:after{
+      &::after {
         opacity: .8;
         transition: opacity 3s cubic-bezier(.755, .050, .855, .060);
       }
