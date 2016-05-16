@@ -1,336 +1,324 @@
-// Place all the styles related to the radio controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 div[data-react-class="Radio"] {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 0 auto;
-	width: 96%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 96%;
 }
 
 .radio {
-	display: flex;
-	flex-direction: column;
-	max-width: $container-max-width;
-	flex: 1;
-}
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  max-width: $container-max-width;
 
-.radio > div {
-	padding: 1.6rem 3.2rem;
-	margin: 1.6rem 0;
-	background-color: $color-card-background;
+  > div {
+    background-color: $color-card-background;
+    margin: 1.6rem 0;
+    padding: 1.6rem 3.2rem;
+  }
 }
 
 .queue-history {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	margin: 3.2rem 0;
-	font-size: 1.2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  font-size: $font-size-s;
+  margin: 3.2rem 0;
 
-	.queue, .history {
-		align-items: center;
-		flex: 1;
-		text-align: center;
-		min-width: 30rem;
-		margin-bottom: 1rem;
+  .queue,
+  .history {
+    align-items: center;
+    flex: 1;
+    margin-bottom: 1rem;
+    min-width: 30rem;
+    text-align: center;
 
-		.queue-title {
-			font-variant: small-caps;
-		}
-	}
+    .queue-title {
+      font-variant: small-caps;
+    }
+  }
 }
 
 .song-library {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-	.tabs {
-		margin: 0 0 1.6rem 0;
-	}
+  .tabs {
+    margin: 0 0 1.6rem;
+  }
 }
 
 .song-searcher {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .tabs {
-	ul {
-		display: flex;
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
-	}
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
 
-	li {
-		flex: 1;
-		@include clickable;
+  li {
+    flex: 1;
+    @include clickable;
 
-		&:hover {
-			color: $color-flair !important;
-			background-color: $button-highlight-color;
-			cursor: pointer;
-		};
-	}
+    &:hover {
+      background-color: $button-highlight-color;
+      color: $color-flair !important;
+      cursor: pointer;
+    };
+  }
 }
 
 .radio-player {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .now-playing {
-	display: flex;
-	flex-direction: column;
-	line-height: 3.8rem;
-	margin: 3.2rem 0 1.6rem 0;
-	align-items: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 3.8rem;
+  margin: 3.2rem 0 1.6rem;
 
-	.title {
-		font-size: 3.2rem;
-		text-align: center;
-	}
+  .title {
+    font-size: $font-size-xl;
+    text-align: center;
+  }
 
-	.artist {
-		font-size: 2.2rem;
-		text-align: center;
-	}
-}
-
-.audio-player {
-	margin: 1.6rem;
+  .artist {
+    font-size: $font-size-l;
+    text-align: center;
+  }
 }
 
 .song-list {
-	width: 100%;
+  width: 100%;
 }
 
 .song-list-table {
-	width: 100%;
-	.artist-header { width: 25%; }
-	.title-header { width: 35%; }
+  width: 100%;
+  .artist-header { width: 25%; }
+  .title-header { width: 35%; }
 }
 
 .song-list-row {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-	td {
-		display: flex;
-		align-items: center;
-	}
+  td {
+    align-items: center;
+    display: flex;
+  }
 
-	.artist, .title {
-		flex: 2;
-		display: inline-block;
-		text-overflow: ellipsis;
-		overflow: hidden;
-	}
+  .artist,
+  .title {
+    display: inline-block;
+    flex: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .song-list-item {
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .song-browser {
-	.paginator {
-		display: flex;
-		width: 100%;
-		justify-content: center;
-		margin: 1.6rem 0 0 0;
+  .paginator {
+    display: flex;
+    justify-content: center;
+    margin: 1.6rem 0 0;
+    width: 100%;
 
-		button, div {
-			display: flex;
-			margin: 0 3.2rem;
-		}
+    button,
+    div {
+      display: flex;
+      margin: 0 3.2rem;
+    }
 
-		.page-info {
-			font-size: 1.6rem;
-			align-items: center;
-		}
-	}
+    .page-info {
+      align-items: center;
+      font-size: $font-size-m;
+    }
+  }
 }
 
 .copy-link {
-	color: $color-gray;
-	font-size: 1.2rem;
-	// cursor: copy !important;
+  color: $color-gray;
+  font-size: 1.2rem;
 }
 
 .listener-count {
-	color: $color-gray;
-	cursor: help;
-	margin-left: 1rem;
+  color: $color-gray;
+  cursor: help;
+  margin-left: 1rem;
 }
 
 .nice-button {
-	@include no-select;
+  @include no-select;
 
-	color: $color-gray;
-	cursor: pointer;
-	margin-left: 1rem;
-	transform: scale(1);
+  color: $color-gray;
+  cursor: pointer;
+  margin-left: 1rem;
+  transform: scale(1);
 
-	&:hover {
-		color: $color-flair;
-	}
+  &:hover {
+    color: $color-flair;
+  }
 
-	&:active {
-		transform-origin: 0.5rem 50%;
-		transform: scale(2.5);
-		transition: transform 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-	}
+  &:active {
+    transform: scale(2.5);
+    transform-origin: .5rem 50%;
+    transition: transform .4s cubic-bezier(.680, -.550, .265, 1.550);
+  }
 }
 
 .audio-player {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1.6rem;
+  width: 100%;
 
-	.progress {
-		border: none;
-		background-color: $color-card-background-lighter;
-		width: $magic-width;
-		height: 0.3rem;
-		width: $magic-width;
+  .progress {
+    background-color: $color-card-background-lighter;
+    border: none;
+    height: 0.3rem;
+    width: $magic-width;
 
-		.value {
-			background-color: $color-flair;
-			transition: all 1s;
-			height: 100%;
-		}
-	}
+    .value {
+      background-color: $color-flair;
+      height: 100%;
+      transition: all 1s;
+    }
+  }
 
-	.below-bar {
-		width: $magic-width;
-		font-size: 1.2rem;
-		text-align: right;
-		display: flex;
-		margin: 0.5rem 0 0 0;
+  .below-bar {
+    display: flex;
+    font-size: $font-size-s;
+    margin: .5rem 0 0;
+    text-align: right;
+    width: $magic-width;
 
-		.time-info {
-			min-width: 5rem;
-		}
+    .time-info {
+      min-width: 5rem;
+    }
 
-		.slider {
-			margin-left: auto;
-			margin-right: 2rem;
-			margin-top: 0.2rem;
-			cursor: pointer;
-			width: 10rem;
-			height: 2rem;
-			display: flex;
-			align-items: center;
+    .slider {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      height: 2rem;
+      margin-left: auto;
+      margin-right: 2rem;
+      margin-top: .2rem;
+      width: 10rem;
 
+      .fill {
+        background-color: $color-card-background-lighter;
+        height: 0.2rem;
+        width: 100%;
+      }
 
-			.fill {
-				height: 100%;
-				width: 100%;
-				height: 0.2rem;
-				background-color: $color-card-background-lighter;
-			}
+      .handle {
+        background-color: $color-white;
+        border-radius: 1rem;
+        height: 1.4rem;
+        margin-top: -.6rem;
+        width: 1.4rem;
 
-			.handle {
-				margin-top: -0.6rem;
-				width: 1.4rem;
-				height: 1.4rem;
-				border-radius: 1rem;
-				background-color: $color-white;
+        &:hover {
+          background-color: $color-flair;
+        }
+      }
+    }
 
-				&:hover {
-					background-color: $color-flair;
-				}
-			}
-		}
+  }
 
-	}
+  .controls {
+    display: flex;
+    flex-direction: column;
+    margin: 1.6rem 0 0.3rem;
+    width: $magic-width;
 
-	.controls {
-		width: $magic-width;
-		display: flex;
-		flex-direction: column;
-		margin: 1.6rem 0 0.3rem 0;
+    .play-button-false,
+    .play-button-true {
+      height: 6.4rem;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(.680, -.550, .265, 1.55);
+      transition-property: margin-right, opacity;
+      width: 100%;
 
-		background-image: {
+      p {
+        @include clickable-style;
+        align-items: flex-start;
+        border: 0;
+        display: flex;
+        font-size: 4rem;
+        height: 100%;
+        justify-content: center;
+        margin: 0;
+        transition: margin-top 0.4s cubic-bezier(.680, -.550, .265, 1.55);
+        width: 100%;
 
-		}
+        &:hover {
+          color: $color-flair !important;
+          cursor: pointer;
+        }
+      }
 
-		.play-button-false, .play-button-true {
-			width: 100%;
-			height: 6.4rem;
-			transition: all 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
-			transition-property: margin-right, opacity;
-			overflow: hidden;
+      &:after {
+        content: '🔇';
+        font-size: 1.8rem;
+        left: calc(100% - 1.8rem);
+        position: relative;
+        text-align: right;
+        top: -12rem;
+        width: 100%;
+      }
+    }
 
-			p {
-				@include clickable-style;
-				border: none;
-				width: 100%;
-				height: 100%;
-				margin: 0;
-				font-size: 4rem;
-				display: flex;
-				justify-content: center;
-				align-items: flex-start;
-				transition: margin-top 0.4s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+    .play-button-false {
+      p {
+        margin-top: 0;
+      }
 
-				&:hover {
-					cursor: pointer;
-					color: $color-flair !important;
-				}
-			}
+      &:after {
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    }
 
-			&:after {
-				position: relative;
-				top: -12.0rem;
-				width: 4.8rem;
-				text-align: right;
-				left: calc(100% - 1.8rem);
-				width: 100%;
-				font-size: 1.8rem;
-				content: "🔇";
-			}
-		}
+    .play-button-true {
+      p {
+        margin-top: 8rem
+      }
 
-		.play-button-false {
-			p {
-				margin-top: 0
-			}
+      &:hover {
+        p {
+          margin-top: 0;
+        }
 
-			&:after {
-				transition: opacity 0.2s;
-				opacity: 0;
-			}
-		}
+        &:after{
+          opacity: 0;
+          transition: opacity 0.2s;
+        }
+      }
 
-		.play-button-true {
-			p {
-				margin-top: 8rem
-			}
-
-			&:hover {
-				p {
-					margin-top: 0;
-				}
-
-				&:after{
-					transition: opacity 0.2s;
-					opacity: 0;
-				}
-			}
-
-			&:after{
-				transition: opacity 3s cubic-bezier(0.755, 0.050, 0.855, 0.060);
-				opacity: 0.8;
-			}
-		}
-	}
+      &:after{
+        opacity: .8;
+        transition: opacity 3s cubic-bezier(.755, .050, .855, .060);
+      }
+    }
+  }
 }

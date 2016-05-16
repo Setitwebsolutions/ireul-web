@@ -1,14 +1,19 @@
 body {
-  color: #333;
+  color: $color-body-text;
   font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'ST Heiti', FangSong, sans-serif;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: $font-size-m;
+  line-height: 1.5 * $font-size-m;
 }
 
-p, ol, ul, td, a, th {
+p,
+ol,
+ul,
+td,
+a,
+th {
   font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans SC', 'Yu Gothic', 'Hiragino Kaku Gothic Pro', 'ST Heiti', FangSong, sans-serif;
-  font-size: 1.6rem;
-  line-height: 2.4rem;
+  font-size: $font-size-m;
+  line-height: 1.5 * $font-size-m;
 }
 
 a {
@@ -24,56 +29,60 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 400;
   margin: 0;
 }
 
 h1 {
-  font-size: 5rem;
-  padding: 3.2rem 0 2.6rem 0;
+  font-size: $font-size-xxxl;
+  padding: 3.2rem 0 2.6rem;
 }
 
 h2 {
-  font-size: 2.8rem;
-  padding: 2.6rem 0 1.2rem 0;
+  font-size: $font-size-xxl;
+  padding: 2.6rem 0 1.2rem;
 }
 
 h3 {
- font-size: 1.6rem;
- font-style: italic;
+  font-size: $font-size-m;
+  font-style: italic;
 }
 
-input[type=text], input[type=password], select {
-  font-size: 1.6rem;
-  min-height: 3.2rem;
-  color: #ddd;
+input[type=text],
+input[type=password],
+select {
   background-color: transparent;
+  color: $color-input-text;
+  font-size: $font-size-m;
+  min-height: 2 * $font-size-m;
   outline: none;
-  transition: border-color 0.1s;
+  transition: border-color .1s;
 
   &:focus {
     border-color: $color-flair;
   }
 }
 
-input[type=text], input[type=password] {
-  border-width: 0px 0px 1px;
-  border-style: none none solid;
-  border-color: -moz-use-text-color -moz-use-text-color #ddd;
-  -moz-border-top-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
+input[type=text],
+input[type=password] {
   border-image: none;
+  border-style: none none solid;
+  border-width: 0 0 1px;
 }
 
 select {
-  border-width: 1px;
   border-style: solid;
+  border-width: 1px;
 }
 
-button, input[type="submit"] {
+button,
+input[type="submit"] {
   @include clickable;
   min-height: 4rem;
 }
@@ -83,23 +92,26 @@ input[type="file"] {
 }
 
 .container {
+  align-items: center;
+  background-color: $color-card-background;
+  border-top: 4.8rem solid $color-background;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  margin: 0 auto 5rem;
   max-width: $container-max-width;
-  background-color: $color-card-background;
-  margin: 0 auto 5rem auto;
-  padding: 0 0 4.8rem 0;
-  border-top: 4.8rem solid $color-background;
+  padding: 0 0 4.8rem;
 
-  .header, .content, form, table {
+  .header,
+  .content,
+  form,
+  table {
+    margin: 1.5rem 0 0;
     min-width: 85%;
-    margin: 1.5rem 0 0 0;
   }
 
   .header a {
-    margin: 0 0.4rem 0 0;
+    margin: 0 .4rem;
   }
 
   table {
@@ -113,21 +125,22 @@ input[type="file"] {
   form {
     #error_explanation {
       border-left: 2.4rem solid $color-red;
-      margin: 0 0 2rem 0;
+      margin: 0 0 2rem;
     }
 
     .field_with_errors {
       display: flex;
       background-color: $color-red;
 
-      input[type="text"], input[type="password"] {
+      input[type="text"],
+      input[type="password"] {
         width: 100%;
       }
     }
 
     label {
-      font-size: 1.6rem;
-      margin: 1.6rem 0 0.5rem 0;
+      font-size: $font-size-m;
+      margin: 1.6rem 0 .5rem;
     }
 
     .fields {
@@ -144,12 +157,18 @@ input[type="file"] {
     }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     min-width: 85%;
   }
 }
 
-#notice, #error_explanation {
+#notice,
+#error_explanation {
   background-color: $color-card-background-lighter;
   color: $color-white;
   padding: 1.6rem;
@@ -163,36 +182,37 @@ table {
   border-collapse: collapse;
 
   .controls {
-    display: flex;
     align-items: center;
+    display: flex;
   }
 
   .numeric {
-    text-align: right;
     font-family: monospace;
+    text-align: right;
   }
 
-  thead, th {
+  thead,
+  th {
     border-bottom: solid 1px $color-white;
   }
 
   th {
-    text-align: left;
     font-variant: small-caps;
-    padding: 0.8rem 0;
-  }
-}
-
-table.vertical {
-  td:first-child {
-    text-align: right;
-    padding-right: 1.6rem;
-    width: 20%;
+    padding: .8rem 0;
+    text-align: left;
   }
 
-  td {
-    vertical-align: top;
-    word-break: break-all;
+  .vertical {
+    td:first-child {
+      padding-right: 1.6rem;
+      text-align: right;
+      width: 20%;
+    }
+
+    td {
+      vertical-align: top;
+      word-break: break-all;
+    }
   }
 }
 
@@ -201,17 +221,38 @@ table.vertical {
 }
 
 .logo {
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   height: 9.6rem;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  margin: 1.6rem 0;
+
+  a {
+    color: $color-card-background-lighter;
+    font-size: $font-size-s;
+    opacity: .5;
+
+    &:hover {
+      color: $color-flair;
+      opacity: 1;
+      transition: color .1s;
+    }
+  }
 }
 
 .pagination {
+  font-size: $font-size-m;
   margin-top: 1.6rem;
-  font-size: 1.6rem;
 
-  .first, .prev, .next, .last {
+  .first,
+  .prev,
+  .next,
+  .last {
     a {
       @include clickable-link;
       color: $color-white;
@@ -223,11 +264,12 @@ table.vertical {
   }
 
   a {
-    padding: 0.8rem;
+    padding: .8rem;
     text-decoration: none;
   }
 
-  .page a, .current {
+  .page a,
+  .current {
     padding: 1.6rem;
   }
 

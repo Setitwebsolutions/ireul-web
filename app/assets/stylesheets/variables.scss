@@ -3,14 +3,30 @@ $magic-width: 85%;
 $button-highlight-color: #111;
 $container-max-width: 94rem;
 
-$color-background: #2F2F2F;
-$color-card-background: #3C3C3C;
-$color-card-background-lighter: #5A5A5A;
-$color-flair: #CC6961;
+$color-background: #2f2f2f;
+$color-card-background-lighter: #5a5a5a;
+$color-card-background: #3c3c3c;
+$color-flair: #cc6961;
 
-$color-green: #56E25A;
-$color-red: #CC6961;
-$color-white: white;
-$color-blue: #7BA0F7;
-$color-purple: #B86AFC;
+$color-body-text: #333;
+$color-input-text: #ddd;
+
+$color-blue: #7ba0f7;
+$color-gray-light: #666;
 $color-gray: #848484;
+$color-green: #56e25a;
+$color-purple: #b86afc;
+$color-red: #cc6961;
+$color-white: #fff;
+
+// Augmented-fourth scale
+$font-size-base: 1.6rem;
+
+$font-size-xxxl: 3.998 * $font-size-base;
+$font-size-xxl: 2.827 * $font-size-base;
+$font-size-xl: 1.999 * $font-size-base;
+$font-size-l: 1.414 * $font-size-base;
+$font-size-m: $font-size-base;
+$font-size-s: .707 * $font-size-base;
+$font-size-xs: .5 * $font-size-base;
+$font-size-xxs: .354 * $font-size-base;
