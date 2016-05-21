@@ -14,7 +14,8 @@
   },
   "globals": {
     "_": true,
-    "React": true
+    "React": true,
+    "ReactDOM": true
   },
   "rules": {
     "comma-dangle": [2, "never"],

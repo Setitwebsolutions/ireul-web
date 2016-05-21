@@ -2,7 +2,8 @@
 
 <%= react_component('Radio', {
 	audioSrc: Rails.configuration.x.ireul["stream_link"],
-	backgroundElementSelector: "html"
+	backgroundElementSelector: "html",
+	chat: Rails.configuration.x.ireul["webchat"]
 }) %>
 
 <div class="footer">

@@ -162,14 +162,21 @@ class Radio extends React.Component {
 
       React.DOM.div({ className: 'song-library-section' },
         React.createElement(SongLibrary, {
-          timeOffset: this.state.radio.timeOffset
+          timeOffset: this.state.radio.timeOffset,
+          chat: this.props.chat
         })
       )
     );
   }
 }
 
+Radio.defaultProps = {
+  backgroundElementSelector: 'html',
+  chat: {}
+};
+
 Radio.propTypes = {
+  audioSrc: React.PropTypes.string,
   backgroundElementSelector: React.PropTypes.string,
-  audioSrc: React.PropTypes.string
+  chat: React.PropTypes.object
 };

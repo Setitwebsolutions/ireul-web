@@ -10,8 +10,10 @@ Rails (with React) client for [Ireul](https://github.com/infinityb/ireul/), a ra
 * Song database (48kHz OGG)
 * Song requests with cooldowns
 * Frosted background images for each song
-* Cool interface
 * 'Nice!' for playing songs
+* Web IRC chatroom via KiwiIRC
+* Basic news management
+* Cool interface
 
 ## Dev setup
 0. [Install NodeJS](https://nodejs.org/en/download/)

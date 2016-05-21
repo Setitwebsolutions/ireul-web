@@ -9,6 +9,10 @@ development:
   icecast:
     web_addr: http://localhost:8000
     selector: /mountpoint
+  webchat:
+    server: my.irc.server
+    channel: '#somechan'
+    nick_prefix: lp
 test:
   environment: test
   username: testuser
@@ -20,6 +24,10 @@ test:
   icecast:
     web_addr: http://localhost:8000
     selector: /mountpoint
+  webchat:
+    server: my.irc.server
+    channel: '#somechan'
+    nick_prefix: lp
 production:
   environment: production
   username: produser
@@ -31,3 +39,7 @@ production:
   icecast:
     web_addr: http://localhost:8000
     selector: /mountpoint
+  webchat:
+    server: my.irc.server
+    channel: '#somechan'
+    nick_prefix: lp
