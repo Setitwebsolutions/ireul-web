@@ -1,7 +1,7 @@
 class SongBrowser extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { songs: [], page: 0, pageCount: 0 };
+    this.state = { dummyContent: false, songs: [], page: 0, pageCount: 0 };
 
     this.loadPrevPageFn = this.loadPrevPage.bind(this);
     this.loadNextPageFn = this.loadNextPage.bind(this);
@@ -17,6 +17,7 @@ class SongBrowser extends React.Component {
       if (xhr.readyState === 4) {
         const res = JSON.parse(xhr.responseText);
         this.setState({
+          dummyContent: false,
           songs: res.results,
           page: parseInt(res.page, 10),
           pageCount: res.pageCount
@@ -28,12 +29,23 @@ class SongBrowser extends React.Component {
     xhr.send();
   }
 
+  dummifySongs() {
+    this.setState({
+      dummyContent: true,
+      songs: this.state.songs,
+      page: this.state.page,
+      pageCount: this.state.pageCount
+    });
+  }
+
   loadPrevPage() {
+    this.dummifySongs();
     this.loadPage(this.state.page - 1);
     this.gotoTop();
   }
 
   loadNextPage() {
+    this.dummifySongs();
     this.loadPage(this.state.page + 1);
     this.gotoTop();
   }
@@ -46,7 +58,7 @@ class SongBrowser extends React.Component {
 
   render() {
     return (
-      <div className="song-browser">
+      <div className={`song-browser ${this.state.dummyContent ? 'dummy': ''}`}>
         <SongList
           controls
           key={"song-browser"}
