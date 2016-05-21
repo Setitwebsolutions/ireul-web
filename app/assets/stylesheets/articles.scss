@@ -11,10 +11,43 @@
 }
 
 .article-info {
-  margin-top: $font-size-l;
   font-style: italic;
+  margin-top: $font-size-l;
+}
+
+.news,
+.news-article-entry {
+  width: $magic-width;
 }
 
 .news {
-  width: $magic-width;
+  padding-bottom: 2rem;
+}
+
+.news-article {
+  margin-bottom: 2em;
+  padding: 2rem;
+
+  &:not(:first-child) {
+    border-top: 1px solid $color-gray-light;
+  }
+}
+
+.article-content,
+.news-article-content {
+  overflow-x: auto;
+}
+
+.news-article-content {
+  margin-top: 1em;
+}
+
+.news-article-author {
+  font-style: italic;
+  margin-top: 1em;
+}
+
+.news-articles {
+  padding-bottom: 2em;
+  width: 100%;
 }

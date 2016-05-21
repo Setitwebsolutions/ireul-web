@@ -28,13 +28,16 @@ class SongLibrary extends React.Component {
           timeOffset: this.props.timeOffset
         });
         break;
+      case 'News':
+        content = React.createElement(News);
+        break;
       default:
         break;
     }
 
     return React.DOM.div({ className: 'song-library', id: 'song-library' },
       React.createElement(Tabs, {
-        tabs: ['Search', 'Browse'],
+        tabs: ['Search', 'Browse', 'News'],
         selectedPage: this.state.selectedPage,
         onChange: this.changePage.bind(this),
         className: 'tabs'

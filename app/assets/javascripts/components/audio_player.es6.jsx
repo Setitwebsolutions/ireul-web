@@ -6,11 +6,16 @@ class AudioPlayer extends React.Component {
     };
 
     this.setVolumeFn = this.setVolume.bind(this);
+    this.progressTimer = null;
   }
 
   componentDidMount() {
-    setInterval(this.updateProgressBar.bind(this), 1000);
+    this.progressTimer = setInterval(this.updateProgressBar.bind(this), 1000);
     this.setVolume(localStorage.getItem('unadjustedVolume') || 1);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.progressTimer);
   }
 
   setVolume(value) {

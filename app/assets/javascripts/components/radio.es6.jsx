@@ -14,6 +14,8 @@ class Radio extends React.Component {
       upcoming: [],
       history: []
     } };
+
+    this.infoInterval = null;
   }
 
   componentDidMount() {
@@ -21,7 +23,11 @@ class Radio extends React.Component {
       this.setupBackground();
     }
     this.getInfo();
-    setInterval(this.getInfo.bind(this), 10000);
+    this.infoInterval = setInterval(this.getInfo.bind(this), 10000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.infoInterval);
   }
 
   setupBackground() {

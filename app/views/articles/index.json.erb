@@ -1,0 +1,19 @@
+<% articles = @articles.map do |a|
+  {
+    id: a.id,
+    title: a.title,
+    created_at: a.created_at,
+    content: a.content,
+    author: a.user.name
+  }
+end
+
+res = {
+  status: :ok,
+  time: Time.now.utc,
+  results: articles,
+  page: @page,
+  pageCount: @page_count
+} %>
+
+<%= res.to_json.html_safe %>
