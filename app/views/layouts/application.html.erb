@@ -21,6 +21,8 @@
             label: "Skip"
         }) %>
         <div class="render-time"><%= sprintf("%.2f", (Time.now.to_f - @start_time)) %>s</div>
+        <div class="user-name"><%= User.find(session[:user_id]).name %></div>
+        <%= link_to '/', '/', data: { no_turbolink: true } %>
         <%= link_to 'Admin', admin_path, data: { no_turbolink: true } %>
         <%= button_to 'Logout', logout_path, method: :delete %>
     </div>
