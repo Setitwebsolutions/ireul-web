@@ -36,7 +36,9 @@ class IrcWrapper extends React.Component {
   }
 
   componentWillUnmount() {
-    document.getElementById('irc-iframe').style.visibility = 'hidden';
+    const iframe = document.getElementById('irc-iframe');
+    iframe.style.visibility = 'hidden';
+    iframe.style.height = '0px';
   }
 
   setWrapperPosition() {
