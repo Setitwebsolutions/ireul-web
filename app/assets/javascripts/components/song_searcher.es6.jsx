@@ -10,6 +10,13 @@ class SongSearcher extends React.Component {
 
     this.onChangeFn = this.onChange.bind(this);
     this.searchDebounced = _.debounce(this.search, 1000, { leading: true });
+    this.initialLoad = false;
+  }
+
+  componentDidMount() {
+    if (!this.props.initialLoad) {
+      this.refs.searchField.focus();
+    }
   }
 
   shouldComponentUpdate() {
@@ -117,6 +124,7 @@ class SongSearcher extends React.Component {
           type="text"
           placeholder="Type here to start searching…"
           onChange={this.onChangeFn}
+          ref="searchField"
         />
         <div className="song-searcher-results">
           {resultsEl}
@@ -128,9 +136,11 @@ class SongSearcher extends React.Component {
 }
 
 SongSearcher.defaultProps = {
+  initialLoad: true,
   timeOffset: 0
 };
 
 SongSearcher.propTypes = {
+  initialLoad: React.PropTypes.bool,
   timeOffset: React.PropTypes.number
 };

@@ -2,6 +2,11 @@ class SongLibrary extends React.Component {
   constructor(props) {
     super(props);
     this.state = { selectedPage: 'Search' };
+    this.initialLoad = true; // Used to disable search box focus on initial load
+  }
+
+  componentDidMount() {
+    this.initialLoad = false;
   }
 
   changePage(id) {
@@ -14,7 +19,8 @@ class SongLibrary extends React.Component {
     switch (this.state.selectedPage) {
       case 'Search':
         content = React.createElement(SongSearcher, {
-          timeOffset: this.props.timeOffset
+          timeOffset: this.props.timeOffset,
+          initialLoad: this.initialLoad
         });
         break;
       case 'Browse':
