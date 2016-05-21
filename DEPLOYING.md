@@ -6,6 +6,7 @@
 1. Install Ruby, NodeJS (with [rbenv](https://github.com/rbenv/rbenv) or otherwise)
 2. `mkdir /var/www`
 3. `chown /var/www <deploy>` give permissions to deploying user (in this example, `deploy` is the user)
+4. Add `RAILS_ENV=production` to `.bash_profile` or equivalent
 
 ### On a dev machine
 1. `cp config/deploy/production.rb.template config/deploy/production.rb`
