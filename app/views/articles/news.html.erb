@@ -1,0 +1,20 @@
+<%= render partial: 'layouts/logo' %>
+
+<div class="container">
+  <div class="header">
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </div>
+
+  <div class="news">
+    <% @articles.each_with_index do |article, i| %>
+      <%= render partial: 'news_article', object: article, as: 'article' %>
+      <% if i != @articles.length - 1 %>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= paginate @articles %>
+</div>

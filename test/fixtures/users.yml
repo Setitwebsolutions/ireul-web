@@ -9,3 +9,8 @@ two:
   id: 2
   name: usertwo
   password_digest: <%= BCrypt::Password.create('passwordtwo') %>
+
+stub:
+  id: 3
+  name: stubuser
+  password_digest: <%= BCrypt::Password.create('stubpassword') %>

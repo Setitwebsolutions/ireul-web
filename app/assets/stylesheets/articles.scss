@@ -1,0 +1,20 @@
+.article-title {
+  margin-bottom: $font-size-l;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: $color-flair;
+    }
+  }
+}
+
+.article-info {
+  margin-top: $font-size-l;
+  font-style: italic;
+}
+
+.news {
+  width: $magic-width;
+}

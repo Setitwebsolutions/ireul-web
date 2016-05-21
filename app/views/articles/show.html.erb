@@ -1,0 +1,13 @@
+<%= render partial: 'layouts/logo' %>
+
+<div class="container">
+  <div class="header">
+    <%= link_to 'Back', news_path %>
+
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+
+    <%= render partial: 'news_article', object: @article, as: 'article' %>
+  </div>
+</div>

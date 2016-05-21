@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="header">
+    <h1>Articles</h1>
+
+    <%= link_to 'Back', admin_path %>
+    <%= link_to 'New', new_article_path %>
+
+    <% if notice %>
+      <p id="notice"><%= notice %></p>
+    <% end %>
+  </div>
+
+  <table class="article-list-table">
+    <thead>
+      <tr>
+        <th class="article-user">User</th>
+        <th class="article-title">Title</th>
+        <th class="article-content">Content</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @articles.each do |article| %>
+        <%= render article %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= paginate @articles %>
+</div>

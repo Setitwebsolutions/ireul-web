@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   resources :users
   resources :songs
   resources :metadatum, except: [:show, :index]
@@ -30,6 +31,10 @@ Rails.application.routes.draw do
   controller :songs do
     post 'songs/search/:query' => :search
     post 'songs/search' => :search
+  end
+
+  controller :articles do
+    get 'news'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

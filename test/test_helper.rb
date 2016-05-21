@@ -14,6 +14,12 @@ module ActiveSupport
         .and_return(true)
     end
 
+    def stub_user_model
+      allow(User)
+        .to receive(:find)
+        .and_return(users(:stub))
+    end
+
     module ImageHelper
       def get_test_image(filename)
         File.new("test/fixtures/images/#{filename}")

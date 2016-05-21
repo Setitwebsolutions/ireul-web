@@ -1,0 +1,10 @@
+<tr class="article-entry">
+  <td><%= article.user.name if article.user %></td>
+  <td><%= article.title %></td>
+  <td><%= article.content %></td>
+  <td>
+    <%= link_to 'S', article %>
+    <%= link_to 'E', edit_article_path(article) %>
+    <%= link_to 'D', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
+</tr>
