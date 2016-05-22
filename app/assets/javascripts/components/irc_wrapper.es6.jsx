@@ -24,7 +24,8 @@ class IrcWrapper extends React.Component {
           height: target.clientHeight,
           top: target.offsetTop,
           left: target.offsetLeft,
-          position: 'absolute'
+          position: 'absolute',
+          zIndex: 1
         }}
       />, wrapper);
       window.ircWrapper.rendered = true;
