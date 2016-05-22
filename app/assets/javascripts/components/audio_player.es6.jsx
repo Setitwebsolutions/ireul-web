@@ -61,7 +61,7 @@ class AudioPlayer extends React.Component {
   listenerCount(props) {
     if (props.streamInfo
       && props.streamInfo.icecast
-      && props.streamInfo.icecast.listeners) {
+      && typeof props.streamInfo.icecast.listeners !== 'undefined') {
       return `👤 ${props.streamInfo.icecast.listeners}`;
     }
 
