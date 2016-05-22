@@ -51,3 +51,21 @@
   padding-bottom: 2em;
   width: 100%;
 }
+
+table {
+  .article-user {
+    width: 10%;
+  }
+
+  .article-title {
+    width: 25%;
+  }
+
+  .article-controls {
+    width: 50px;
+  }
+
+  td {
+    padding: 1em 0;
+  }
+}
