@@ -57,7 +57,7 @@ class IrcWrapper extends React.Component {
       <div
         className="irc-wrapper"
         ref="targetAnchor"
-        style={{ width: '100%', height: '500px' }}
+        style={{ width: '100%', height: '500px', backgroundColor: '#181818' }}
       >
       </div>
     );

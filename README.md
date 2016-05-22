@@ -11,7 +11,7 @@ Rails (with React) client for [Ireul](https://github.com/infinityb/ireul/), a ra
 * Song requests with cooldowns
 * Frosted background images for each song
 * 'Nice!' for playing songs
-* Web IRC chatroom via KiwiIRC
+* Web IRC chatroom via [Kiwi IRC](https://kiwiirc.com/)
 * Basic news management
 * Cool interface
 
