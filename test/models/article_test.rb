@@ -12,6 +12,6 @@ class ArticleTest < ActiveSupport::TestCase
       title: 'title',
       content: 'content <div></div><a lmao href="url">a link</a>',
       user_id: 1)
-    assert_equal(a.content, 'content <a href="url">a link</a>')
+    assert_equal('<p>content <div></div><a href="url">a link</a></p>', a.content)
   end
 end
