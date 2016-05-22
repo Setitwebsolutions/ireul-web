@@ -2,7 +2,7 @@
   <h2 class="article-title"><%= link_to article.title, article %></h2>
 
   <div class="article-content">
-    <%= simple_format(article.content) %>
+    <%= simple_format(article.content, {}, sanitize: false) %>
   </div>
 
   <div class="article-info">
