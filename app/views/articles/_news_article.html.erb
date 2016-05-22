@@ -2,12 +2,7 @@
   <h2 class="article-title"><%= link_to article.title, article %></h2>
 
   <div class="article-content">
-    <%=
-      sanitize(article.content,
-        tags: %w(a ul li ol strong em code pre br marquee img video iframe),
-        attributes: %w(href class style width height src frameborder allowfullscreen)
-      )
-    %>
+    <%= simple_format(article.content) %>
   </div>
 
   <div class="article-info">
