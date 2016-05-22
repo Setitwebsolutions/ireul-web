@@ -7,11 +7,11 @@ class ArticleTest < ActiveSupport::TestCase
     end
   end
 
-  test 'it sanitizes content on save' do
+  test 'it formats content on save' do
     a = Article.create(
       title: 'title',
       content: 'content <div></div><a lmao href="url">a link</a>',
       user_id: 1)
-    assert_equal('<p>content <div></div><a href="url">a link</a></p>', a.content)
+    assert_equal('<p>content <div></div><a lmao href="url">a link</a></p>', a.content)
   end
 end
