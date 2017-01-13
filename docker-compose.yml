@@ -1,0 +1,29 @@
+version: "2.0"
+services:
+  web:
+    build: .
+    links:
+      - postgres
+    volumes:
+      - ./public:/app/public
+      - ./log:/app/log
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env
+    restart: always
+
+  postgres:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: touhou
+      POSTGRES_PASSWORD: hunter2
+      POSTGRES_DB: touhou
+    ports:
+      - '5432:5432'
+    volumes:
+      - ireulweb-postgres:/var/lib/postgresql/data
+    restart: always
+volumes:
+  ireulweb-postgres: {}
+

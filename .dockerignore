@@ -1,0 +1,7 @@
+.git
+.dockerignore
+Gemfile.lock
+tmp/*
+log/*
+public/system/*
+db/*.sqlite3

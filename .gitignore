@@ -92,3 +92,6 @@ Gemfile.lock
 
 # Use template file for production deployment configuration
 config/deploy/production.rb
+
+# Docker secrets
+*.env
