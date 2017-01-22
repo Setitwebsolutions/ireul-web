@@ -18,6 +18,6 @@ RUN bundle install --without development test
 
 COPY . .
 
-RUN bundle exec rake assets:precompile RAILS_ENV=production
+RUN bundle exec rake assets:precompile
 
 CMD bundle exec unicorn -c config/unicorn.rb
