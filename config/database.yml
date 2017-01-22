@@ -5,12 +5,13 @@ default: &default
 
 development:
   <<: *default
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_development?') %>
+  url: <%= ENV['DATABASE_URL'] && ENV['DATABASE_URL'].gsub('?', '_development?') %>
 
 test:
   <<: *default
   database: ireul_web_test
+  username: postgres
 
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>
+  url: <%= ENV['DATABASE_URL'] && ENV['DATABASE_URL'].gsub('?', '_production?') %>

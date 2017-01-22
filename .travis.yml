@@ -6,6 +6,7 @@ services:
   - postgresql
 before_script:
   - psql -c 'create database ireul_web_test;' -U postgres
+  - rake db:migrate
   - echo $RAILS_ENV
 script: bundle exec rake test
 install: bundle install --jobs=3 --retry=3
