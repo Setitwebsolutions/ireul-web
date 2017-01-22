@@ -1,9 +1,16 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
 development:
+  <<: *default
   url: <%= ENV['DATABASE_URL'].gsub('?', '_development?') %>
 
 test:
-  adapter: postgresql
-  database: travis_ci_test
+  <<: *default
+  database: ireul_web_test
 
 production:
+  <<: *default
   url: <%= ENV['DATABASE_URL'].gsub('?', '_production?') %>
