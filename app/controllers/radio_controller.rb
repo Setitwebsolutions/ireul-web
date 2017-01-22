@@ -88,10 +88,10 @@ class RadioController < ApplicationController
   # TODO: Optimise this
   def info
     queue = IreulWeb::Application.ireul_client.queue_status
-    upcoming = queue.upcoming || []
-    history = queue.history || []
+    upcoming = (queue && queue.upcoming) || []
+    history = (queue && queue.history) || []
 
-    unless queue.current.nil?
+    unless queue.nil? || queue.current.nil?
       handle = queue.current.instance_variable_get('@track').handle
       song_id = IreulWeb::Application.handle_map[handle]
       song = Song.find_by_id(song_id)
